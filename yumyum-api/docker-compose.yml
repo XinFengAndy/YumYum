@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.3.0
+    # REMOVE the 'command' line
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: yumyum_api
+      MYSQL_USER: yumyum_api
+      MYSQL_PASSWORD: yumyum_api123456
+    ports:
+      - "3306:3306"
+    volumes:
+      # This volume persists your database data
+      - ./data/mysql:/var/lib/mysql
+      # This volume mounts your custom configuration
+      - ./my.cnf:/etc/mysql/conf.d/my-custom.cnf
