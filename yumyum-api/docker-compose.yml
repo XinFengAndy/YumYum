@@ -5,10 +5,10 @@ services:
     image: mysql:8.3.0
     # REMOVE the 'command' line
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: yumyum_api
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
